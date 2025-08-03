@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpdb64j2aqp36"]
+
+[ext_resource type="Texture2D" uid="uid://c02w3gbiacca8" path="res://Assets/Piece.png" id="1_jelu4"]
+[ext_resource type="Script" path="res://Piece.gd" id="2_arjlw"]
+[ext_resource type="PackedScene" uid="uid://bwxc777jyu543" path="res://ClickableComponent.tscn" id="3_5w1bs"]
+[ext_resource type="Texture2D" uid="uid://bjiq63po8i5gw" path="res://Assets/HighlightCorner.png" id="3_nadxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0j8g"]
+size = Vector2(64, 64)
+
+[node name="Piece" type="Area2D"]
+script = ExtResource("2_arjlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l0j8g")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jelu4")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_nadxg")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color(0.498039, 0.239216, 0.905882, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+horizontal_alignment = 1
+
+[node name="ClickableComponent" parent="." instance=ExtResource("3_5w1bs")]

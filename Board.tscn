@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://oj4nwlb85x3n"]
+
+[ext_resource type="Script" path="res://Board.gd" id="1_6erb0"]
+[ext_resource type="PackedScene" uid="uid://dout1ajv0eyj4" path="res://BoardTiles.tscn" id="1_8kqhl"]
+
+[node name="Board" type="Node2D"]
+position = Vector2(320, 64)
+script = ExtResource("1_6erb0")
+
+[node name="BoardTiles" parent="." instance=ExtResource("1_8kqhl")]

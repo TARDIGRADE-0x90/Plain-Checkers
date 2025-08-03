@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://rsse3n00bjx0"]
+
+[ext_resource type="Script" path="res://CheckerTile.gd" id="1_jtypv"]
+[ext_resource type="Texture2D" uid="uid://ctco6jsofi57f" path="res://Assets/Highlight.png" id="2_g8dyd"]
+[ext_resource type="PackedScene" uid="uid://bwxc777jyu543" path="res://ClickableComponent.tscn" id="2_xl4gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcm6n"]
+size = Vector2(64, 64)
+
+[node name="CheckerTile" type="Area2D"]
+script = ExtResource("1_jtypv")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_g8dyd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tcm6n")
+
+[node name="ClickableComponent" parent="." instance=ExtResource("2_xl4gh")]
+
+[node name="HighlightTimer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
