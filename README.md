@@ -1,0 +1,1 @@
+An attempt at making checkers across the span of a few days, blind without any tutorials. Unsurprisingly, it is far from perfect, still missing CPU turns, and a few bugs with jump checks at certain tiles are present, but the bare minimum playability is there.
